@@ -6,7 +6,7 @@ import { AppDataProvider } from "./Providers/AppDataProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/webyappy">
       <AppDataProvider>
         <App />
       </AppDataProvider>

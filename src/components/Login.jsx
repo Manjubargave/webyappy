@@ -4,6 +4,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppData } from "../Providers/AppDataProvider";
+import { API_BASE_URL } from "../constants/constants";
 import axios from "axios";
 
 export default function Login() {
@@ -42,7 +43,7 @@ export default function Login() {
       }
 
       // Make the request using axios to get access and refresh tokens
-      const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+      const response = await axios.post(`${API_BASE_URL}/api/token/`, {
         username: username,
         password: password,
       });
@@ -56,7 +57,7 @@ export default function Login() {
       // Set submission status to true when successful
       if (response.data.access) {
         const clientResponse = await axios.get(
-          "http://127.0.0.1:8000/clientdetails/",
+          `${API_BASE_URL}/clientdetails/`,
           {
             params: { emailid: username },
             headers: { Authorization: `Bearer ${response.data.access}` },
@@ -94,7 +95,7 @@ export default function Login() {
         loop
         muted
       >
-        <source src="/banner_video.mp4" type="video/mp4" />
+        <source src="webyappy/banner_video.mp4" type="video/mp4" />
       </video>
 
       <div class="logincard" style={{ marginTop: "30rem" }}>

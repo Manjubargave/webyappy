@@ -51,13 +51,6 @@ function App() {
         element={<Recommendations />}
       />
 
-      <Route path="/clientdepartments" element={<ClientDepartments />} />
-
-      <Route path="/clientdepartments/settings" element={<ClientSettings />} />
-      <Route
-        path="/clientdepartments/settings/addclient"
-        element={<SecAddClient />}
-      />
       <Route path="/clientdepartments/*" element={<ClientDepartmentsPage />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
     </Routes>

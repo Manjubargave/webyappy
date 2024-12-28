@@ -3,6 +3,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { useState } from "react";
 import { useAppData } from "../Providers/AppDataProvider";
 import axios from "axios";
+import { API_BASE_URL } from "../constants/constants";
 
 export default function EditNotes({ onClose, note }) {
   const [editorContent, setEditorContent] = useState(note.content);
@@ -19,7 +20,7 @@ export default function EditNotes({ onClose, note }) {
   async function handleUpdateNotes() {
     try {
       const response = await axios.put(
-        `http://127.0.0.1:8000/notes/${note.id}/`,
+        `${API_BASE_URL}/notes/${note.id}/`,
         {
           content: stripHtmlTags(editorContent),
           title: title,
