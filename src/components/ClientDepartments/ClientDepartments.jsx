@@ -143,6 +143,7 @@ export default function ClientDepartments() {
     setId(id);
   }
   function handleAddNotes() {
+    console.log("Add notes");
     setIsAddModelOpen(!isAddModelOpen);
   }
 
