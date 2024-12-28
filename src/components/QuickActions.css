@@ -1,0 +1,352 @@
+.offcanvas.offcanvas-right.offcanvas-on {
+    transition: left 0.3s ease, right 0.3s ease, bottom 0.3s ease, top 0.3s ease;
+    right: 0;
+    left: auto;
+}
+.offcanvas.offcanvas-right {
+    right: -395px;
+    left: auto;
+}
+.offcanvas.offcanvas-on {
+    transition: left 0.3s ease, right 0.3s ease, bottom 0.3s ease, top 0.3s ease;
+    left: 0;
+}
+.offcanvas {
+    background: #ffffff;
+    box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.25);
+}
+.offcanvas {
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: left 0.3s ease, right 0.3s ease, bottom 0.3s ease, top 0.3s ease;
+    left: -395px;
+    width: 375px;
+}
+.offcanvas {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.25);
+}
+.offcanvas, .offcanvas-mobile {
+    flex-shrink: 0 !important;
+}
+.p-10 {
+    padding: 2rem !important;
+}
+.pb-10, .py-10 {
+    padding-bottom: 2.5rem !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.font-weight-bold {
+    font-weight: 500 !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+h3, .h3 {
+    font-size: 1.5rem;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.btn.btn-icon.btn-xs {
+    height: 24px;
+    width: 24px;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn.btn-light {
+    color: #7E8299;
+    background-color: #F3F6F9;
+    border-color: #F3F6F9;
+}
+.btn.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: calc(1.5em + 1.3rem + 2px);
+    width: calc(1.5em + 1.3rem + 2px);
+}
+.btn:not(.btn-text) {
+    cursor: pointer;
+}
+.btn {
+    border-radius: 5px !important;
+}
+.btn {
+    border-radius: 0;
+}
+.btn {
+    outline: none !important;
+    vertical-align: middle;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-light {
+    color: #181C32;
+    background-color: #F3F6F9;
+    border-color: #F3F6F9;
+    box-shadow: none;
+}
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    color: #3F4254;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.85rem;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+a, button {
+    outline: 0 !important;
+}
+a {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+a {
+    color: #F64E60;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btn.btn-light i {
+    color: #7E8299;
+}
+.btn.btn-icon i {
+    padding: 0;
+    margin: 0;
+}
+.btn.btn-xs i {
+    font-size: 1rem;
+    padding-right: 0.3rem;
+}
+.btn i {
+    font-size: 1.3rem;
+    padding-right: 0.35rem;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-flex;
+}
+.btn i {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.icon-xs {
+    font-size: 0.65rem !important;
+}
+.text-muted {
+    color: #B5B5C3 !important;
+}
+.text-muted {
+    color: #B5B5C3 !important;
+}
+.scroll {
+    position: relative;
+    overflow: hidden;
+}
+.mr-n5, .mx-n5 {
+    margin-right: -1.25rem !important;
+}
+.pr-5, .px-5 {
+    padding-right: 1.25rem !important;
+}
+.ps {
+    overflow: hidden !important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+.gutter-b {
+    margin-bottom: 25px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12.5px;
+    margin-left: -12.5px;
+}
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+a.btn.btn-block.btn-light.btn-hover-primary {
+    transition: 0.5s;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn.btn-light {
+    color: #7E8299;
+    background-color: #F3F6F9;
+    border-color: #F3F6F9;
+}
+.btn:not(.btn-text) {
+    cursor: pointer;
+}
+.btn {
+    border-radius: 5px !important;
+}
+.btn {
+    border-radius: 0;
+}
+.btn {
+    outline: none !important;
+    vertical-align: middle;
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.text-dark-50 {
+    color: #7E8299 !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.pb-10, .py-10 {
+    padding-bottom: 2.5rem !important;
+}
+.pt-10, .py-10 {
+    padding-top: 2.5rem !important;
+}
+.pl-5, .px-5 {
+    padding-left: 1.25rem !important;
+}
+.pr-5, .px-5 {
+    padding-right: 1.25rem !important;
+}
+.py-5{
+    padding-top:1.25rem !important;
+    padding-bottom: 1.25rem !important;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-light {
+    color: #181C32;
+    background-color: #F3F6F9;
+    border-color: #F3F6F9;
+    box-shadow: none;
+}
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    color: #3F4254;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.85rem;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+a, button {
+    outline: 0 !important;
+}
+a {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+a {
+    color: #F64E60;
+    text-decoration: none;
+    background-color: transparent;
+}
+.svg-icon.svg-icon-3x svg {
+    height: 3rem !important;
+    width: 3rem !important; }
+
+
+    span.d-block.font-weight-bold.font-size-h6.mt-2 {
+        font-size: 13px !important;
+    }
+    .font-size-h6 {
+        font-size: 1.175rem !important;
+    }
+    .font-weight-bold {
+        font-weight: 500 !important;
+    }
+    .mt-2, .my-2 {
+        margin-top: 0.5rem !important;
+    }
+    .d-block {
+        display: block !important;
+    }
+
+
+    .font-weight-bold {
+        font-weight: 500 !important;
+    }
+    .m-0 {
+        margin: 0 !important;
+    }
+    h3, .h3 {
+        font-size: 1rem;
+    }
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+.btn.btn-hover-primary:hover:not(.btn-text):not(:disabled):not(.disabled), 
+.btn.btn-hover-primary:focus:not(.btn-text), 
+.btn.btn-hover-primary.focus:not(.btn-text) {
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    background-color: #F26714 !important;
+    border-color: #f26722 !important;
+    transform: scale(1.05); /* Scale the card */
+}
+
+/* Changes both text (card-title) and icon (card-icon) to white when hovered */
+.btn.btn-hover-primary:hover .card-title,
+.btn.btn-hover-primary:hover .card-icon
+{
+    color: #ffffff !important; /* Changes both icon and text to white */
+}
+
+
+.svg-icon.svg-icon-3x svg {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.btn .svg-icon svg {
+    height: 18px;
+    width: 18px;
+}
+.svg-icon svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+.svg-icon.svg-icon-primary svg g [fill] {
+    transition: fill 0.3s ease;
+    fill: #FFFFFF !important;
+  }

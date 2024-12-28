@@ -1,0 +1,201 @@
+@media (min-width: 992px) {
+    .header-fixed .wrapper {
+        padding-top: 80px;
+    }
+}
+@media (min-width: 992px) {
+    .wrapper {
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+}
+@media (min-width: 1200px) {
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+.depart_bg:before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg, #ffc794 0%, #ff850f 100%);
+    transform: scale(0.2, 1);
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+.depart_bg:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 74px;
+    bottom: 0;
+    margin: auto;
+    width: 218px;
+    height: 218px;
+    border-radius: 100%;
+    opacity: 0.102;
+    animation: dance3 2s alternate infinite;
+}
+.depart_bg:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+.mt-7, .my-7 {
+    margin-top: 1.75rem !important;
+}
+.svg-icon.svg-icon-primary svg g [fill] {
+    transition: fill 0.3s ease;
+    fill: #FFAF1A !important;
+}
+
+.svg-icon.svg-icon-primary:hover svg g [fill] {
+    fill: #ffffff !important; /* Fill changes to white on hover */
+}
+.svg-icon.svg-icon-5x svg {
+    height: 5rem !important;
+    width: 5rem !important; }
+    
+
+.card.card-custom.gutter-b.card-stretch:hover {
+    background-position: right bottom !important;
+    transition: 0.5s;
+}
+.content-dep{
+    position:fixed;
+    right:0;
+    left:0
+
+}
+.depart_bg {
+    filter: drop-shadow(0px 10px 20px rgba(0, 29, 38, 0.07));
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+.card.card-custom.gutter-b.card-stretch:hover {
+    background-position: right bottom !important;
+    transition: 0.5s;
+    color:#ffffff
+  
+}
+
+.card.card-custom.gutter-b.card-stretch {
+    background-position: right top;
+    background-size: 30% auto;
+    background-repeat: no-repeat;
+    background-image: url(../media/svg/shapes/abstract-4.svg);
+}
+.card.card-custom.gutter-b.card-stretch {
+    background-position: right top;
+    background-size: 30% auto;
+    background-repeat: no-repeat;
+    background-image: url(../media/svg/shapes/abstract-4.svg);
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    transition: 0.5s;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+.card.card-custom.card-stretch.gutter-b {
+    height: calc(100% - 25px);
+}
+.card.card-custom.card-stretch {
+    display: flex;
+    align-items: stretch !important;
+    flex-direction: column;
+    height: 100%;
+}
+.card.card-custom {
+    box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
+    border: 0;
+}
+.card {
+    background-color: var(--card-bg-color) !important;
+    color: var(--color-fg) !important;
+    box-shadow: var(--bx-shadow) !important;
+}
+.gutter-b {
+    margin-bottom: 25px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #EBEDF3;
+    border-radius: 0.85rem;
+}
+
+
+.flex-row-fluid {
+    flex: 1 auto;
+    -ms-flex: 1 0 0px;
+    min-width: 0;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.flex-root {
+    flex: 1;
+    -ms-flex: 1 0 0px;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+
+.flex-column-fluid {
+    flex: 1 0 auto;
+}
+.breadcrumb.breadcrumb-transparent {
+    background-color: transparent;
+    border-radius: 0;
+}
+.breadcrumb {
+    align-items: center;
+}
+.font-weight-bold {
+    font-weight: 500 !important;
+}
+.p-0 {
+    padding: 0 !important;
+}
+.mb-2, .my-2 {
+    margin-bottom: 0.5rem !important;
+}
+.mt-2, .my-2 {
+    margin-top: 0.5rem !important;
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #EBEDF3;
+    border-radius: 0.85rem;
+}
+.breadcrumb-item {
+    display: flex;
+}
+.breadcrumb .breadcrumb-item a {
+    display: flex;
+    align-items: center;
+}
+.text-muted {
+    color: #B5B5C3 !important;
+}
+.breadcrumb.breadcrumb-dot .breadcrumb-item:after {
+    content: "\2022";
+    padding-left: 0.5rem;
+}

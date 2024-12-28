@@ -1,0 +1,9 @@
+.icon-5x {
+    font-size: 3.5rem !important;
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}

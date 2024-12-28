@@ -1,0 +1,73 @@
+@keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Modal Header */
+  .modal-content h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3F4254; /* Dark theme text color */
+    margin-bottom: 20px;
+  }
+  
+  /* Input Field */
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #E4E6EF; /* Light border */
+    border-radius: 5px;
+    background-color: #F3F6F9; /* Light background similar to the input theme in the screenshots */
+    font-size: 16px;
+    color: #3F4254; /* Dark text */
+  }
+  
+  /* Buttons */
+  .modal-content .btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .modal-content .btn-success {
+    background-color: #F64E60; /* Primary theme color */
+    color: #fff; /* White text */
+  }
+  
+  .modal-content .btn-secondary {
+    background-color: #E4E6EF; /* Secondary light color */
+    color: #3F4254; /* Dark text */
+  }
+  
+  /* Close Button */
+  .modal-content .btn-secondary:hover {
+    background-color: #dcdcdc; /* Hover effect */
+  }
+  
+  /* Success Button Hover */
+  .modal-content .btn-success:hover {
+    background-color: #fa3a4d; /* Slightly darker green on hover */
+  }
+  .modaladdnew {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears on top */
+}

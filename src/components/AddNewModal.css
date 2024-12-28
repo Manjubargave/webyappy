@@ -1,0 +1,27 @@
+.content{
+   
+    overflow: auto;
+  position: absolute;
+  left:0;
+  right:0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 992px) {
+    .col-lg-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+}
+.btn.btn-light-danger {
+    color: #F64E60;
+    background-color: #FFE2E5;
+    border-color: transparent;
+}
+

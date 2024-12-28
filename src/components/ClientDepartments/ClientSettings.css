@@ -1,0 +1,6 @@
+@media (min-width: 1200px) {
+    .col-xl-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}

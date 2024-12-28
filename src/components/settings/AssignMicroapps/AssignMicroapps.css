@@ -1,0 +1,217 @@
+@media (min-width: 992px) {
+    .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        padding: 0 25px;
+    }
+}
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    width: 100%;
+    padding-right: 12.5px;
+    padding-left: 12.5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card.card-custom.bg_trans {
+    box-shadow: none;
+    background: #e0e9ed;
+}
+.card.card-custom.bg_trans {
+    box-shadow: none;
+    background: #e0e9ed;
+}
+.card.card-custom {
+    box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
+    border: 0;
+}
+.card {
+    border-radius: 5px;
+}
+.card {
+    background-color: var(--card-bg-color) !important;
+    color: var(--color-fg) !important;
+    box-shadow: var(--bx-shadow) !important;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #EBEDF3;
+    border-radius: 0.85rem;
+}
+.p-5 {
+    padding: 1.25rem !important;
+}
+@media (min-width: 576px) {
+    .flex-sm-nowrap {
+        flex-wrap: nowrap !important;
+    }
+}
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.border-bottom {
+    border-bottom: 1px solid #EBEDF3 !important;
+}
+.mr-2, .mx-2 {
+    margin-right: 0.5rem !important;
+}
+
+.font-weight-bold {
+    font-weight: 500 !important;
+}
+.mr-5, .mx-5 {
+    margin-right: 1.25rem !important;
+}
+.mb-2, .my-2 {
+    margin-bottom: 0.5rem !important;
+}
+.mt-2, .my-2 {
+    margin-top: 0.5rem !important;
+}
+h5, .h5 {
+    font-size: 1.25rem;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.text-dark {
+    color: var(--color-fg) !important;
+}
+.pt-5, .py-5 {
+    padding-top: 1.25rem !important;
+}
+.checkbox-inline {
+    display: flex;
+    flex-wrap: wrap;
+}
+.checkbox-inline .checkbox:last-child {
+    margin-right: 0;
+}
+.checkbox-inline .checkbox {
+    margin-right: 1rem;
+    margin-bottom: 0.35rem;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+.checkbox > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+input[type="radio"], input[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+button, input {
+    overflow: visible;
+}
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.checkbox-inline .checkbox span {
+    margin-right: 0.75rem;
+}
+.checkbox.checkbox-square > span {
+    border-radius: 0;
+}
+.checkbox > span {
+    background-color: #EBEDF3;
+    border: 1px solid transparent;
+}
+.checkbox > span {
+    height: 18px;
+    width: 18px;
+}
+.checkbox > span {
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 0.85rem;
+}
+.checkbox > span:after {
+    width: 5px;
+    height: 10px;
+}
+.checkbox > span:after {
+    content: '';
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 2px 2px 0 /*rtl:ignore*/ !important;
+    transform: rotate(45deg) /*rtl:ignore*/;
+    margin-top: -2px;
+}
+.font-size-h4 {
+    font-size: 1.35rem !important;
+}
+a.text-hover-primary, .text-hover-primary {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+.mb-0, .my-0 {
+    margin-bottom: 0 !important;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.checkbox > input:checked ~ span {
+    background-color: #F64E60;
+}
+.checkbox > input:checked ~ span {
+    transition: all 0.3s ease;
+    background-color: none;
+}
+.checkbox > input:checked ~ span:after {
+    border-color: #ffffff;
+}
+.checkbox > input:checked ~ span:after {
+    display: block;
+}

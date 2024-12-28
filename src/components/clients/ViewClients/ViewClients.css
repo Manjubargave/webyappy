@@ -1,0 +1,24 @@
+.btn-third839 a {
+    border: 1px solid #f26722;
+    padding: 3px 10px 3px 10px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.btn-third839 a:hover {
+    background-color: #f26722;
+    color: white;
+}
+html a:hover, html a:active, html a:focus, body a:hover, body a:active, body a:focus {
+    text-decoration: none !important;
+}
+.btn.btn-primary-filter {
+    color: #ffffff;
+    background-color: #f26722;
+    border-color: #f26722;
+  }
+
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
