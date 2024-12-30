@@ -12,6 +12,7 @@ import { client_department_microapps } from "../CardData";
 import axios from "axios";
 import { useAppData } from "../../Providers/AppDataProvider";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../constants/constants";
 export default function MapMicroapps() {
   const location = useLocation();
   const details = location.state?.details;
@@ -59,7 +60,8 @@ export default function MapMicroapps() {
     try {
       console.log("Inside try");
       const response = await axios.post(
-        "http://127.0.0.1:8000/clientmicroapps/",
+        `${API_BASE_URL}/clientmicroapps/`,
+
         {
           emailid: details.emailid,
           apps: data,
@@ -80,7 +82,6 @@ export default function MapMicroapps() {
   }
   return (
     <>
-      <Header />
       <div
         class="d-flex flex-column flex-column-fluid content"
         id="kt_content"
@@ -125,10 +126,7 @@ export default function MapMicroapps() {
                   </h5>
                 </div>
                 <div class="d-flex align-items-center">
-                  <a
-                    href="https://demolook.in/clarityboard/home/superadminclient"
-                    class="btn btn-default ml-5 font-weight-bold"
-                  >
+                  <a class="btn btn-default ml-5 font-weight-bold">
                     <FontAwesomeIcon icon={faArrowLeft} />
                     Back
                   </a>
@@ -322,7 +320,6 @@ export default function MapMicroapps() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

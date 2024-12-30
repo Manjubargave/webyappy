@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import "./DeleteNotes.css";
 import { useAppData } from "../Providers/AppDataProvider";
+import { API_BASE_URL } from "../constants/constants";
 
 export default function DeleteNotes({ onClose, id }) {
   const token = localStorage.getItem("access");
@@ -11,7 +12,8 @@ export default function DeleteNotes({ onClose, id }) {
   const handleDeleteNote = async () => {
     try {
       await axios.delete(
-        `http://127.0.0.1:8000/notes/${id}/`,
+        `${API_BASE_URL}/notes/${id}/`,
+
         { email: currentUser.username },
         {
           headers: {

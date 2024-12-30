@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useAppData } from "../../Providers/AppDataProvider";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function MappingFields() {
   const location = useLocation();
@@ -72,7 +73,7 @@ export default function MappingFields() {
 
       // Send data to the backend
       const response = await axios.post(
-        "http://127.0.0.1:8000/updateclientmicroapps/",
+        `${API_BASE_URL}/updateclientmicroapps/`,
         payload,
         {
           headers: {
@@ -89,7 +90,6 @@ export default function MappingFields() {
 
   return (
     <>
-      <Header />
       <div
         class="d-flex flex-column flex-column-fluid content"
         style={{ paddingTop: "80px" }}
@@ -372,7 +372,6 @@ export default function MappingFields() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

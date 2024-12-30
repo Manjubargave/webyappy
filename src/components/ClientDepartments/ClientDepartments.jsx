@@ -14,6 +14,7 @@ import { useAppData } from "../../Providers/AppDataProvider";
 
 import "./ClientDepartments.css";
 import ClientSettings from "./ClientSettings";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function ClientDepartments() {
   const location = useLocation();
@@ -120,7 +121,7 @@ export default function ClientDepartments() {
     const fetchNotes = async () => {
       console.log("Content", content);
       try {
-        const response = await axios.get("http://127.0.0.1:8000/notes/", {
+        const response = await axios.get(`${API_BASE_URL}/notes/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

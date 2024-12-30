@@ -3,6 +3,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "./AddNotes.css";
 import { useState } from "react";
 import { useAppData } from "../Providers/AppDataProvider";
+import { API_BASE_URL } from "../constants/constants";
 import axios from "axios";
 export default function AddNotes({ onClose }) {
   const [editorContent, setEditorContent] = useState("");
@@ -31,7 +32,8 @@ export default function AddNotes({ onClose }) {
       };
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/notes/",
+        `${API_BASE_URL}/notes/`,
+
         payload,
         {
           headers: {

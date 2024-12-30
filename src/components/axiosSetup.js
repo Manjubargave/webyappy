@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../constants/constants';
 
 // Add the interceptor
 
@@ -6,7 +7,7 @@ const refreshAccessToken = async (refreshToken) => {
   if (!refreshToken) return null;
 
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+    const response = await axios.post(`${API_BASE_URL}/api/token/refresh/`, {
       refresh: refreshToken,
     });
     console.log("New Access Token:", response.data.access);

@@ -1,6 +1,7 @@
 
 import {jwtDecode} from 'jwt-decode';
 import axios from 'axios';
+import { API_BASE_URL } from '../constants/constants';
 
 export const isTokenExpired = (token) => {
   try {
@@ -17,7 +18,7 @@ export async function renewAccessToken() {
   
     if (refreshToken) {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+        const response = await axios.post(`${API_BASE_URL}/api/token/refresh/`, {
           refresh: refreshToken
         });
   
