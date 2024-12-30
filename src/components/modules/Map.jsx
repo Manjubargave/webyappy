@@ -1,10 +1,9 @@
-import Header from "../Header";
-import Footer from "../Footer";
 import "./Map.css";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useAppData } from "../../Providers/AppDataProvider";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function Map() {
   const [departments, setDepartments] = useState({
@@ -25,7 +24,7 @@ export default function Map() {
     try {
       console.log("Inside try");
       const response = await axios.post(
-        "http://127.0.0.1:8000/clientmicroapps/",
+        `${API_BASE_URL}/clientmicroapps/`,
         {
           emailid: client.emailid,
           departments: departments,
@@ -51,7 +50,6 @@ export default function Map() {
 
   return (
     <>
-      <Header />
       <div
         class="d-flex flex-column flex-column-fluid content"
         id="kt_content"
@@ -75,12 +73,7 @@ export default function Map() {
                     </a>
                   </li>
                   <li class="breadcrumb-item">
-                    <a
-                      href="https://demolook.in/clarityboard/home/mapdepartment"
-                      class="text-muted"
-                    >
-                      Map Department
-                    </a>
+                    <a class="text-muted">Map Department</a>
                   </li>
                   <li class="breadcrumb-item">
                     <a href="#" class="text-muted">
@@ -211,7 +204,6 @@ export default function Map() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

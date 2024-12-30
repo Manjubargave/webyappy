@@ -11,6 +11,7 @@ import {
   faAngleLeft,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function Microapps() {
   const location = useLocation();
@@ -61,7 +62,8 @@ export default function Microapps() {
     async function fetchMicroapps() {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/clientmicroapps/",
+          `${API_BASE_URL}/clientmicroapps/`,
+
           {
             params: { emailid: details.emailid },
             headers: {
@@ -100,7 +102,6 @@ export default function Microapps() {
 
   return (
     <>
-      <Header />
       <div
         class="d-flex flex-column flex-column-fluid content"
         style={{ paddingTop: "80px" }}
@@ -429,7 +430,6 @@ export default function Microapps() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

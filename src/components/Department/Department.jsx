@@ -6,6 +6,7 @@ import { useNavigate, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { cardData } from "../CardData";
 import DepartmentItem from "./DepartmentItem";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function Department() {
   const isSuperAdmin = useState(false);
@@ -38,7 +39,8 @@ export default function Department() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/assignmicroapps/",
+          `${API_BASE_URL}/assignmicroapps/`,
+
           {
             params: { emailid: email.email },
           },

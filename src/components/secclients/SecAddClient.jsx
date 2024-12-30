@@ -4,7 +4,7 @@ import Header from "../Header";
 import "./SecAddClient.css";
 import axios from "axios";
 import { useAppData } from "../../Providers/AppDataProvider";
-
+import { API_BASE_URL } from "../../constants/constants";
 export default function SecAddClient() {
   const [formData, setFormData] = useState();
   const { currentUser } = useAppData();
@@ -15,7 +15,7 @@ export default function SecAddClient() {
 
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/clientformfields/",
+          `${API_BASE_URL}/clientformfields/`,
           {
             params: {
               emailid: currentUser.username,
@@ -133,12 +133,7 @@ export default function SecAddClient() {
             <div class="d-flex align-items-center mr-1 mt-2 mb-2">
               <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold my-2 p-0">
                 <li class="breadcrumb-item">
-                  <a
-                    href="https://demolook.in/etmcloud/home/sales_enhancer"
-                    class="text-dark"
-                  >
-                    Dashboard
-                  </a>
+                  <a class="text-dark">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
                   <a href="#" class="text-muted">
@@ -160,15 +155,12 @@ export default function SecAddClient() {
                 </div>
 
                 <div class="d-flex align-items-center">
-                  <a
-                    href="https://demolook.in/etmcloud/home/sales_enhancer"
-                    class="btn btn-default font-weight-bold"
-                  >
+                  <a class="btn btn-default font-weight-bold">
                     <i class="la la-arrow-left"></i> Back
                   </a>
 
                   <div class="btn-group ml-2">
-                    <a href="https://demolook.in/etmcloud/home/recommendaddclients">
+                    <a>
                       <button
                         type="button"
                         class="btn btn-primary font-weight-bold"

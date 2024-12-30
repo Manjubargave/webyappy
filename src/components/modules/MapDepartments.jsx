@@ -2,96 +2,105 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft,faAngleLeft,faAngleRight,faEye,faFilter} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowLeft,
+  faAngleLeft,
+  faAngleRight,
+  faEye,
+  faFilter,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Filter from "../clients/Filter";
 import { useLocation } from "react-router-dom";
+import { API_BASE_URL } from "../../constants/constants";
 
-export default function MapDepartments(){
-    const token=localStorage.getItem('access')
-    const [data,setData]=useState([])
-    const [filter,setFilter]=useState(false)
-    const [currentPage, setCurrentPage] = useState(1);
-    const [entriesPerPage, setEntriesPerPage] = useState(5);
-    const indexOfLastEntry = currentPage * entriesPerPage;
-    const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-    const navigate=useNavigate()
-    const totalPages = Math.ceil(data.length / entriesPerPage);
-    const [query,setQuery]=useState('')
-    const location=useLocation()
-    const appName=location.state?.app
+export default function MapDepartments() {
+  const token = localStorage.getItem("access");
+  const [data, setData] = useState([]);
+  const [filter, setFilter] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [entriesPerPage, setEntriesPerPage] = useState(5);
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+  const navigate = useNavigate();
+  const totalPages = Math.ceil(data.length / entriesPerPage);
+  const [query, setQuery] = useState("");
+  const location = useLocation();
+  const appName = location.state?.app;
 
-    const handleEntriesChange = (e) => {
-        setEntriesPerPage(Number(e.target.value));
-        setCurrentPage(1); // Reset to page 1 when entries per page changes
-      };
-      const handlePageChange = (direction) => {
-        if (direction === 'next' && currentPage < totalPages) {
-          setCurrentPage(currentPage + 1);
-        } else if (direction === 'previous' && currentPage > 1) {
-          setCurrentPage(currentPage - 1);
-        }
-      };
-      function openFilter(){
-            setFilter(!filter)
-      }
-
-
-
-      function handleView(user){
-        console.log("Handle View",user)
-
-        navigate('/departments/clients/viewclients/view',{state:{client:user}})
-
-      }
-
-
-    useEffect(() => {
-    
-        const fetchData = async () => {
-            try {
-              const response = await axios.get('http://127.0.0.1:8000/clientdetails/',{
-                headers: {
-                    'Authorization': `Bearer ${token}`  // Attach token in header
-                }
-              })
-              console.log(response)
-              setData(response.data); // Adjust based on your API response structure
-              console.log(data)
-            } catch (error) {
-              console.error('Error fetching data:', error);
-            }
-        };
-        fetchData()
-    }, []);
-    function handleMap(item){
-
-      console.log("Handle Map","AppName",appName,"item",item)
-
-      if(appName === 'mapDepartments'){
-        navigate('/departments/modules/map',{state:{details:item}})
-      }
-      else if(appName==='mapMicroapps' || appName==='mapFields'){
-        navigate('/departments/modules/mapdepartments/microapps',{state:{details:item,app:appName}})
-      }
-
+  const handleEntriesChange = (e) => {
+    setEntriesPerPage(Number(e.target.value));
+    setCurrentPage(1); // Reset to page 1 when entries per page changes
+  };
+  const handlePageChange = (direction) => {
+    if (direction === "next" && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    } else if (direction === "previous" && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
     }
+  };
+  function openFilter() {
+    setFilter(!filter);
+  }
 
-    const filteredData = data.filter((row) =>
-        Object.values(row).some((value) =>
-            value.toString().toLowerCase().includes(query.toLowerCase())
-        )
-    );
-    console.log("FV",filteredData)
-    const currentEntries = filteredData.slice(indexOfFirstEntry, indexOfLastEntry);
+  function handleView(user) {
+    console.log("Handle View", user);
 
+    navigate("/departments/clients/viewclients/view", {
+      state: { client: user },
+    });
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/clientdetails/`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token in header
+          },
+        });
+        console.log(response);
+        setData(response.data); // Adjust based on your API response structure
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  function handleMap(item) {
+    console.log("Handle Map", "AppName", appName, "item", item);
+
+    if (appName === "mapDepartments") {
+      navigate("/departments/modules/map", { state: { details: item } });
+    } else if (appName === "mapMicroapps" || appName === "mapFields") {
+      navigate("/departments/modules/mapdepartments/microapps", {
+        state: { details: item, app: appName },
+      });
+    }
+  }
+
+  const filteredData = data.filter((row) =>
+    Object.values(row).some((value) =>
+      value.toString().toLowerCase().includes(query.toLowerCase())
+    )
+  );
+  console.log("FV", filteredData);
+  const currentEntries = filteredData.slice(
+    indexOfFirstEntry,
+    indexOfLastEntry
+  );
 
   return (
     <>
-      {filter && <Filter toggleFunc={openFilter}/>}
+      {filter && <Filter toggleFunc={openFilter} />}
       <Header />
-      <div class="d-flex flex-column flex-column-fluid content" style={{paddingTop:"80px"}} id="kt_content">
+      <div
+        class="d-flex flex-column flex-column-fluid content"
+        style={{ paddingTop: "80px" }}
+        id="kt_content"
+      >
         <div class="subheader subheader-transparent" id="kt_subheader">
           <div class="container-fluid">
             <div class="d-flex align-items-center mr-1 mt-2 mb-5">
@@ -131,13 +140,13 @@ export default function MapDepartments(){
                         class="btn btn-primary-filter btn-sm font-weight-bold"
                         onClick={openFilter}
                       >
-                        <FontAwesomeIcon icon={faFilter}/> Filter
+                        <FontAwesomeIcon icon={faFilter} /> Filter
                       </button>
                       <a
                         href="https://demolook.in/clarityboard/home/superadminclient"
                         class="btn btn-default ml-5 font-weight-bold"
                       >
-                        <FontAwesomeIcon icon={faArrowLeft}/> Back
+                        <FontAwesomeIcon icon={faArrowLeft} /> Back
                       </a>
                     </div>
                   </div>
@@ -160,7 +169,9 @@ export default function MapDepartments(){
                                 class="form-control form-control-sm"
                                 placeholder=""
                                 aria-controls="DataTables_Table_0"
-                                onChange={(event)=>setQuery(event.target.value)}
+                                onChange={(event) =>
+                                  setQuery(event.target.value)
+                                }
                               />
                             </label>
                           </div>
@@ -336,61 +347,135 @@ export default function MapDepartments(){
                               </tr>
                             </thead>
                             <tbody>
-                        
-                        
-                        {currentEntries.map(item => (
-                            <tr role="row" class="odd" key={item.id}>
-                            <td class="sorting_1 dtr-control"></td>
-                            <td>{item.gstNumber}</td>
-                           <td >{item.entityName}</td> 
-                            <td>{item.firstname+" "+item.lastname}</td>
-                            <td>{item.phoneno}</td>
-                            <td>{item.emailid}</td>
-                            <td>{item.city}</td>
-                            <td>{new Date(item.addedon).toLocaleString()}</td>
-                            <td>{item.addedby}</td>
-                            <td>
-                                <a onClick={()=>handleView(item)}class="mr-2" title="View Clients">
-                                    <FontAwesomeIcon icon={faEye}/>
-                                </a>
-                                <span class="btn-third839">
-                                    <a  onClick={()=>handleMap(item)}class="mr-2" title="Switch to client login">
-                                        Map
+                              {currentEntries.map((item) => (
+                                <tr role="row" class="odd" key={item.id}>
+                                  <td class="sorting_1 dtr-control"></td>
+                                  <td>{item.gstNumber}</td>
+                                  <td>{item.entityName}</td>
+                                  <td>
+                                    {item.firstname + " " + item.lastname}
+                                  </td>
+                                  <td>{item.phoneno}</td>
+                                  <td>{item.emailid}</td>
+                                  <td>{item.city}</td>
+                                  <td>
+                                    {new Date(item.addedon).toLocaleString()}
+                                  </td>
+                                  <td>{item.addedby}</td>
+                                  <td>
+                                    <a
+                                      onClick={() => handleView(item)}
+                                      class="mr-2"
+                                      title="View Clients"
+                                    >
+                                      <FontAwesomeIcon icon={faEye} />
                                     </a>
-                                </span>
-                            </td>
-                             
-                                   
-                    </tr>
-                        ))}
-                 
-                 </tbody>
-                            
+                                    <span class="btn-third839">
+                                      <a
+                                        onClick={() => handleMap(item)}
+                                        class="mr-2"
+                                        title="Switch to client login"
+                                      >
+                                        Map
+                                      </a>
+                                    </span>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
                           </table>
                         </div>
                       </div>
-                     
-                       <div class="row">
+
+                      <div class="row">
                         <div class="col-md-5">
-                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing {indexOfFirstEntry + 1} to {Math.min(indexOfLastEntry, filteredData.length)} of {filteredData.length} entries</div>
+                          <div
+                            class="dataTables_info"
+                            id="DataTables_Table_0_info"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            Showing {indexOfFirstEntry + 1} to{" "}
+                            {Math.min(indexOfLastEntry, filteredData.length)} of{" "}
+                            {filteredData.length} entries
+                          </div>
                         </div>
                         <div class="col-sm-12 col-md-7 dataTables_pager">
-                            <div class="dataTables_length" id="DataTables_Table_0_length">
-                                <label>Show 
-                                    <select value={entriesPerPage} onChange={handleEntriesChange} name="DataTables_Table_0_length" ariaControls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value={5}>5</option>
-                                        <option value={10}>10</option>
-                                        <option value={25}>25</option>
-                                        <option value={50}>50</option></select> entries</label>
-                                    </div>
-                                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                        <ul class="pagination">
-                                        <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`} id="DataTables_Table_0_previous" ><a  className="page-link" onClick={() => handlePageChange('previous')} aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link"><FontAwesomeIcon icon={faAngleLeft}/></a></li>
-                                        <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">{currentPage}</a></li>
-                                        <li  className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`} id="DataTables_Table_0_next"><a className="page-link" onClick={() => handlePageChange('next')} aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link"><FontAwesomeIcon icon={faAngleRight}/>   </a></li>
-                                        </ul>
-                                        
-                                </div></div></div>
+                          <div
+                            class="dataTables_length"
+                            id="DataTables_Table_0_length"
+                          >
+                            <label>
+                              Show
+                              <select
+                                value={entriesPerPage}
+                                onChange={handleEntriesChange}
+                                name="DataTables_Table_0_length"
+                                ariaControls="DataTables_Table_0"
+                                class="custom-select custom-select-sm form-control form-control-sm"
+                              >
+                                <option value={5}>5</option>
+                                <option value={10}>10</option>
+                                <option value={25}>25</option>
+                                <option value={50}>50</option>
+                              </select>{" "}
+                              entries
+                            </label>
+                          </div>
+                          <div
+                            class="dataTables_paginate paging_simple_numbers"
+                            id="DataTables_Table_0_paginate"
+                          >
+                            <ul class="pagination">
+                              <li
+                                className={`page-item ${
+                                  currentPage === 1 ? "disabled" : ""
+                                }`}
+                                id="DataTables_Table_0_previous"
+                              >
+                                <a
+                                  className="page-link"
+                                  onClick={() => handlePageChange("previous")}
+                                  aria-controls="DataTables_Table_0"
+                                  data-dt-idx="0"
+                                  tabindex="0"
+                                  class="page-link"
+                                >
+                                  <FontAwesomeIcon icon={faAngleLeft} />
+                                </a>
+                              </li>
+                              <li class="paginate_button page-item active">
+                                <a
+                                  href="#"
+                                  aria-controls="DataTables_Table_0"
+                                  data-dt-idx="1"
+                                  tabindex="0"
+                                  class="page-link"
+                                >
+                                  {currentPage}
+                                </a>
+                              </li>
+                              <li
+                                className={`page-item ${
+                                  currentPage === totalPages ? "disabled" : ""
+                                }`}
+                                id="DataTables_Table_0_next"
+                              >
+                                <a
+                                  className="page-link"
+                                  onClick={() => handlePageChange("next")}
+                                  aria-controls="DataTables_Table_0"
+                                  data-dt-idx="2"
+                                  tabindex="0"
+                                  class="page-link"
+                                >
+                                  <FontAwesomeIcon icon={faAngleRight} />{" "}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
