@@ -51,7 +51,7 @@ export const AppDataProvider = ({ children }) => {
           console.log("Inside isClient is false");
           try {
             const response = await axios.get(
-              "http://127.0.0.1:8000/assignmicroapps/",
+              `${API_BASE_URL}/assignmicroapps/`,
               {
                 params: { emailid: currentUser.username },
               },
@@ -70,7 +70,7 @@ export const AppDataProvider = ({ children }) => {
           console.log("inside isclient is true");
           try {
             const response = await axios.get(
-              "http://127.0.0.1:8000/clientmicroapps/",
+              `${API_BASE_URL}/clientmicroapps/`,
               {
                 params: { emailid: currentUser.username },
               },

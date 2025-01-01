@@ -7,6 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { fetchCurrentUser, fetchMasters } from "../../api";
 import AddNewSelect from "../../AddNewSelect";
 import Select from "react-select";
+import { API_BASE_URL } from "../../../constants/constants";
 
 export default function AddUser() {
   const option1 = [
@@ -121,7 +122,7 @@ export default function AddUser() {
 
     if (emailInput.length > 0) {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/checkemail/", {
+        const response = await axios.get(`${API_BASE_URL}/checkemail/`, {
           params: { email: emailInput },
         });
         console.log(response.data);
@@ -156,7 +157,7 @@ export default function AddUser() {
       console.log("Inside fetch current user");
 
       try {
-        const response = await axios.get("http://127.0.0.1:8000/currentuser/", {
+        const response = await axios.get(`${API_BASE_URL}/currentuser/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -176,7 +177,7 @@ export default function AddUser() {
     if (isEdit) {
       console.log("Inside Edit");
       const response = axios.post(
-        "http://127.0.0.1:8000/updateuser/",
+        `${API_BASE_URL}/updateuser/`,
         {
           firstname: formData.firstname,
           lastname: formData.lastname,
@@ -200,7 +201,7 @@ export default function AddUser() {
     } else {
       console.log("Inside handle Submit", currentUser, selectedImage);
       let response = axios.post(
-        "http://127.0.0.1:8000/userdetails/",
+        `${API_BASE_URL}/userdetails/`,
         {
           firstname: formData.firstname,
           lastname: formData.lastname,

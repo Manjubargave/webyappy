@@ -11,6 +11,7 @@ import {
 import "./ViewClients.css";
 import { useNavigate } from "react-router-dom";
 import Filter from "../Filter";
+import { API_BASE_URL } from "../../../constants/constants";
 
 export default function ViewClients() {
   const token = localStorage.getItem("access");
@@ -45,7 +46,7 @@ export default function ViewClients() {
     console.log(clientid, "ClientId");
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8000/switch-to-client/${clientid}`,
+        `${API_BASE_URL}/switch-to-client/${clientid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -91,14 +92,11 @@ export default function ViewClients() {
     const fetchData = async () => {
       console.log("*** ViewClients fetchData token***", token);
       try {
-        const response = await axios.get(
-          "http://127.0.0.1:8000/clientdetails/",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`, // Attach token in header
-            },
-          }
-        );
+        const response = await axios.get(`${API_BASE_URL}/clientdetails/`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token in header
+          },
+        });
         console.log("***View Clients***", response);
         setData(response.data); // Adjust based on your API response structure
         console.log(data);

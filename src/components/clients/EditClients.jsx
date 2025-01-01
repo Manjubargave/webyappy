@@ -12,6 +12,7 @@ import {
   faFilter,
   faEdit,
 } from "@fortawesome/free-solid-svg-icons";
+import { API_BASE_URL } from "../../constants/constants";
 
 export default function EditClients() {
   const [data, setData] = useState([]);
@@ -39,14 +40,11 @@ export default function EditClients() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://127.0.0.1:8000/clientdetails/",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`, // Attach token in header
-            },
-          }
-        );
+        const response = await axios.get(`${API_BASE_URL}/clientdetails/`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token in header
+          },
+        });
         console.log(response);
         setData(response.data); // Adjust based on your API response structure
         console.log(data);

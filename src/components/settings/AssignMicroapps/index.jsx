@@ -2,6 +2,7 @@ import "./AssignMicroapps.css";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../../../constants/constants";
 
 export default function AssignMicroapps() {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ export default function AssignMicroapps() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/assignmicroapps/",
+          `${API_BASE_URL}/assignmicroapps/`,
           {
             params: { emailid: user.emailid },
           },
@@ -130,7 +131,7 @@ export default function AssignMicroapps() {
     console.log("Datat", data);
     try {
       await axios.post(
-        "http://127.0.0.1:8000/assignmicroapps/",
+        `${API_BASE_URL}/assignmicroapps/`,
         {
           emailid: user.emailid,
           data: data,

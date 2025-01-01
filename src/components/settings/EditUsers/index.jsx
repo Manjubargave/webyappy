@@ -14,6 +14,7 @@ import {
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../../constants/constants";
 
 export default function EditUsers() {
   const [data, setData] = useState([]);
@@ -54,7 +55,7 @@ export default function EditUsers() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/userdetails/", {
+        const response = await axios.get(`${API_BASE_URL}/userdetails/`, {
           headers: {
             Authorization: `Bearer ${token}`, // Attach token in header
           },

@@ -33,51 +33,6 @@ export default function QuickListAction({ toggleFunc }) {
     // console.log(formattedArray);
   }
 
-  // useEffect(() => {
-
-  //     const getCurrentUser=async()=>{
-  //         try{
-
-  //             const data=await fetchCurrentUser(token)
-  //             //console.log("CurrentUser",data)
-  //             setCurrentUser(data)
-
-  //         }catch(e){
-
-  //             console.error("Error fetching the user:", e);
-  //         }
-  //     }
-  //     getCurrentUser();
-
-  //   }, [token]);
-
-  // useEffect(() => {
-
-  //     const fetchData = async () => {
-  //        if(currentUser){
-  //         try {
-  //           const response = await axios.get('http://127.0.0.1:8000/assignmicroapps/',{
-  //             params: { emailid: currentUser.username },
-  //           },{
-  //             headers: {
-  //                 'Authorization': `Bearer ${token}`  // Attach token in header
-  //             }
-  //           })
-
-  //           //
-  //          setDepartments(response.data)
-  //          // console.log("Selected Microapps",response.data)
-  //          // console.log(selectedMicroapps[0].emailid)
-  //          // console.log(selectedMicroapps.some((obj)=>obj.emailid === user.emailid && obj.apps ==="Add Clients")) // Adjust based on your API response structure
-
-  //         } catch (error) {
-  //           console.error('Error fetching data:', error);
-  //         }
-  //     }
-  //        // console.log(departments)
-  //     };
-  //     fetchData()
-  // }, [currentUser]);
   return (
     <>
       <div

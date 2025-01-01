@@ -9,6 +9,7 @@ import axios from "axios";
 import Select from "react-select";
 import { fetchMasters } from "../../api";
 import AddNewSelect from "../../AddNewSelect";
+import { API_BASE_URL } from "../../../constants/constants";
 export default function AddClient() {
   const navigate = useNavigate();
   const token = localStorage.getItem("access");
@@ -72,7 +73,7 @@ export default function AddClient() {
 
     if (emailInput.length > 0) {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/checkemail/", {
+        const response = await axios.get(`${API_BASE_URL}/checkemail/`, {
           params: { email: emailInput },
         });
         console.log(response.data);
@@ -173,7 +174,7 @@ export default function AddClient() {
     e.preventDefault();
     console.log(clientData);
     const response = await axios.post(
-      "http://127.0.0.1:8000/clientdetails/",
+      `${API_BASE_URL}/clientdetails/`,
       {
         source: clientData.source,
         entityName: clientData.entityName,
