@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { fetchCurrentUser } from "../components/api";
 import axios from "axios";
+import { API_BASE_URL } from "../constants/constants";
 
 const AppDataContext = createContext();
 
@@ -31,13 +32,10 @@ export const AppDataProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchClientDetails = async () => {
-      const clientResponse = await axios.get(
-        "http://127.0.0.1:8000/clientdetails/",
-        {
-          params: { emailid: currentUser.username },
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      const clientResponse = await axios.get(`${API_BASE_URL}/clientdetails/`, {
+        params: { emailid: currentUser.username },
+        headers: { Authorization: `Bearer ${token}` },
+      });
       console.log("Client Response", clientResponse);
       setIsClient(clientResponse.data.exists);
     };

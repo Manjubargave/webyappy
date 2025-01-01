@@ -32,11 +32,6 @@ function App() {
   }, [navigate]);
   console.log("***App***");
 
-  const appData = useAppData();
-  console.log("appData", appData);
-  const { isClient } = useAppData();
-  let formattedArray = [];
-
   return (
     <Routes>
       <Route exact path="/" element={<Login />}></Route>

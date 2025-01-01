@@ -51,7 +51,7 @@ export default function Department() {
           }
         );
 
-        //
+        console.log("Response for assign microapps", response.data);
         setDepartments(selectedDepartments(response.data));
         console.log("Selected Microapps", response.data);
         // console.log(selectedMicroapps[0].emailid)
