@@ -36,7 +36,7 @@ export default function Header({ logo }) {
       <div id="kt_header" class="header header-fixed noprint2">
         <div class="container-fluid d-flex align-items-stretch justify-content-between">
           <div class="d-lg-flex align-items-center mr-3">
-            <a href="">
+            <a>
               <img src={logo ? logo : "webyappy/logo.png"} class="max-h-40px" />
             </a>
           </div>
