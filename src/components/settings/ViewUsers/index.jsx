@@ -90,12 +90,7 @@ export default function ViewUsers() {
 
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold my-2 p-0">
                       <li class="breadcrumb-item">
-                        <a
-                          href="https://demolook.in/clarityboard/home/settings_super"
-                          class="text-muted mr-3"
-                        >
-                          Settings
-                        </a>
+                        <a class="text-muted mr-3">Settings</a>
                       </li>
                       <li class="breadcrumb-item">
                         <a href="#" class="text-muted">
@@ -326,7 +321,11 @@ export default function ViewUsers() {
                                     <td class="sorting_1 dtr-control"></td>
                                     <td>
                                       <img
-                                        src="/default.png"
+                                        src={
+                                          item.profilepic
+                                            ? item.profilepic
+                                            : "/webyappy/default.png"
+                                        }
                                         className="img-fluid ccg_imgs"
                                       />
                                     </td>
