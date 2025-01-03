@@ -103,7 +103,7 @@ export default function Login() {
           <div class="login-form login-signin">
             <form className="form" onSubmit={handleSubmit}>
               <div class="pb-5 pt-lg-0 text-center">
-                <img src="webyappy/logo.png" class="max-h-55px" />
+                <img src="logo.png" class="max-h-55px" />
               </div>
               <div class="form-group input-containerrty45">
                 <input
